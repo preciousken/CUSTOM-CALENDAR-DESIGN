@@ -86,6 +86,18 @@ month_names.forEach((e,index) => {
     month_list.appendChild(month)
 })
 
+document.querySelector('#prev-year').onclick = () =>{
+    --curr_year.value
+    generateCalendar(curr_month.value,curr_year.value)
+}
+
+
+document.querySelector('#next-year').onclick = () =>{
+    ++curr_year.value
+    generateCalendar(curr_month.value,curr_year.value)
+}
+
+
 let currDate = new Date()
 
 let curr_month = {value: currDate.getMonth()}

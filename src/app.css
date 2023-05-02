@@ -105,6 +105,7 @@ html,body{
     padding: 5px;
     position: relative;
     cursor: pointer;
+    animation: to-top 1s forwards;
 }
 
 .month-picker{
@@ -273,13 +274,13 @@ html,body{
     transform: scale(1.5);
     visibility: hidden;
     pointer-events: none;
-    transition: all 0.2s ease-in-out;
 }
 
 .month-list.show{
     transform: scale(1);
     visibility: visible;
     pointer-events: visible;
+    transition: all 0.2s ease-in-out;
 }
 
 .month-list > div{
@@ -297,4 +298,15 @@ html,body{
 
 .month-list > div > div:hover{
     background-color: var(--color-hover);
+}
+
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0 ;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
